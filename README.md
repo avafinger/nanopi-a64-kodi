@@ -118,7 +118,7 @@ V4L2 works somehow but there are some compatibility issues i would say.
 
 
 
- 
+Check video0 capabilities: 
 
 
     v4l2-ctl -d /dev/video0 -l
@@ -145,6 +145,21 @@ V4L2 works somehow but there are some compatibility issues i would say.
     Image Processing Controls
 
                        test_pattern 0x009f0903 (menu)   : min=0 max=4 default=0 value=0
+
+
+mpjpg-streamer
+
+    ./mjpg_streamer -i "./input_uvc.so -y 3 -r 640x480 -f 30 -q 90 -n" -o "./output_http.so -w ./www"
+    MJPG Streamer Version: svn rev: 
+     i: Using V4L2 device.: /dev/video0
+     i: Desired Resolution: 640 x 480
+     i: Frames Per Second.: 30
+     i: Format............: YUV - 0x59565955
+     i: JPEG Quality......: 90
+     o: www-folder-path...: ./www/
+     o: HTTP TCP port.....: 8080
+     o: username:password.: disabled
+     o: commands..........: enabled
 
 
 
