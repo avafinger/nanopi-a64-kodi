@@ -118,6 +118,8 @@ V4L2 works somehow but there are some compatibility issues i would say.
 
 
 
+ 
+
 
     v4l2-ctl -d /dev/video0 -l
 
