@@ -56,17 +56,17 @@ ir has been tested with this procedure:
 
 Enable the right protocols for your TV control, in this case **NEC**
 
-  `
+  
   ubuntu@nanopi-a64:~$ sudo su
   root@nanopi-a64:/home/ubuntu# echo nec > /sys/class/rc/rc0/protocols
   root@nanopi-a64:/home/ubuntu# exit
   exit
   ubuntu@nanopi-a64:~$ 
-  `
+  
   
 Testing:
 
-  `
+  
   ir-keytable -t
   Testing events. Please, press CTRL-C to abort.
   2031.476557: lirc protocol(nec): scancode = 0x18
@@ -98,7 +98,7 @@ Testing:
   2129.019405: lirc protocol(nec): scancode = 0x42
   2129.071248: lirc protocol(nec): scancode = 0x42 repeat
   2129.931740: lirc protocol(nec): scancode = 0x52
-  `
+  
 
 # Credits
 
