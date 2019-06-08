@@ -56,47 +56,47 @@ ir has been tested with this procedure:
 
 Enable the right protocols for your TV control, in this case **NEC**
 
-  ubuntu@nanopi-a64:~$ sudo su
-  root@nanopi-a64:/home/ubuntu# echo nec > /sys/class/rc/rc0/protocols
-  root@nanopi-a64:/home/ubuntu# exit
-  exit
-  ubuntu@nanopi-a64:~$ 
+    ubuntu@nanopi-a64:~$ sudo su
+    root@nanopi-a64:/home/ubuntu# echo nec > /sys/class/rc/rc0/protocols
+    root@nanopi-a64:/home/ubuntu# exit
+    exit
+    ubuntu@nanopi-a64:~$ 
   
   
 Testing:
 
   
-  ir-keytable -t
-  Testing events. Please, press CTRL-C to abort.
-  2031.476557: lirc protocol(nec): scancode = 0x18
-  2031.528357: lirc protocol(nec): scancode = 0x18 repeat
-  2034.773938: lirc protocol(nec): scancode = 0x5e
-  2034.825705: lirc protocol(nec): scancode = 0x5e repeat
-  2036.602136: lirc protocol(nec): scancode = 0x5e
-  2036.651578: lirc protocol(nec): scancode = 0x5e repeat
-  2106.761334: lirc protocol(nec): scancode = 0x5e repeat
-  2109.565189: lirc protocol(nec): scancode = 0x18
-  2109.617021: lirc protocol(nec): scancode = 0x18 repeat
-  2112.232368: lirc protocol(nec): scancode = 0x18
-  2113.582986: lirc protocol(nec): scancode = 0x18
-  2114.407440: lirc protocol(nec): scancode = 0x18
-  2114.459277: lirc protocol(nec): scancode = 0x18 repeat
-  2114.568423: lirc protocol(nec): scancode = 0x18 repeat
-  2114.677493: lirc protocol(nec): scancode = 0x18 repeat
-  2114.787119: lirc protocol(nec): scancode = 0x18 repeat
-  2114.895715: lirc protocol(nec): scancode = 0x18 repeat
-  2115.004819: lirc protocol(nec): scancode = 0x18 repeat
-  2116.119229: lirc protocol(nec): scancode = 0x5e
-  2117.288802: lirc protocol(nec): scancode = 0xd
-  2121.278938: lirc protocol(nec): scancode = 0x5a
-  2121.330503: lirc protocol(nec): scancode = 0x5a repeat
-  2122.939595: lirc protocol(nec): scancode = 0x5e
-  2122.991345: lirc protocol(nec): scancode = 0x5e repeat
-  2123.100414: lirc protocol(nec): scancode = 0x5e repeat
-  2126.369606: lirc protocol(nec): scancode = 0x4a
-  2129.019405: lirc protocol(nec): scancode = 0x42
-  2129.071248: lirc protocol(nec): scancode = 0x42 repeat
-  2129.931740: lirc protocol(nec): scancode = 0x52
+    ir-keytable -t
+    Testing events. Please, press CTRL-C to abort.
+    2031.476557: lirc protocol(nec): scancode = 0x18
+    2031.528357: lirc protocol(nec): scancode = 0x18 repeat
+    2034.773938: lirc protocol(nec): scancode = 0x5e
+    2034.825705: lirc protocol(nec): scancode = 0x5e repeat
+    2036.602136: lirc protocol(nec): scancode = 0x5e
+    2036.651578: lirc protocol(nec): scancode = 0x5e repeat
+    2106.761334: lirc protocol(nec): scancode = 0x5e repeat
+    2109.565189: lirc protocol(nec): scancode = 0x18
+    2109.617021: lirc protocol(nec): scancode = 0x18 repeat
+    2112.232368: lirc protocol(nec): scancode = 0x18
+    2113.582986: lirc protocol(nec): scancode = 0x18
+    2114.407440: lirc protocol(nec): scancode = 0x18
+    2114.459277: lirc protocol(nec): scancode = 0x18 repeat
+    2114.568423: lirc protocol(nec): scancode = 0x18 repeat
+    2114.677493: lirc protocol(nec): scancode = 0x18 repeat
+    2114.787119: lirc protocol(nec): scancode = 0x18 repeat
+    2114.895715: lirc protocol(nec): scancode = 0x18 repeat
+    2115.004819: lirc protocol(nec): scancode = 0x18 repeat
+    2116.119229: lirc protocol(nec): scancode = 0x5e
+    2117.288802: lirc protocol(nec): scancode = 0xd
+    2121.278938: lirc protocol(nec): scancode = 0x5a
+    2121.330503: lirc protocol(nec): scancode = 0x5a repeat
+    2122.939595: lirc protocol(nec): scancode = 0x5e
+    2122.991345: lirc protocol(nec): scancode = 0x5e repeat
+    2123.100414: lirc protocol(nec): scancode = 0x5e repeat
+    2126.369606: lirc protocol(nec): scancode = 0x4a
+    2129.019405: lirc protocol(nec): scancode = 0x42
+    2129.071248: lirc protocol(nec): scancode = 0x42 repeat
+    2129.931740: lirc protocol(nec): scancode = 0x52
   
 # Camera (OV5640)
 
@@ -152,7 +152,7 @@ V4L2 works somehow but there are some compatibility issues i would say.
 
 # Sound
 
-hdmi-sound works very nice, spdif / analog (jack) i could not figure out how to make it work.
+  hdmi-sound works very nice, spdif / analog (jack) i could not figure out how to make it work.
 
 
 # CEDRUS and Mali
@@ -162,16 +162,16 @@ This work's done by Maxime from Bootlin.
 
 # KODI
 
-Kodi 18.3 RC1 has been working fine with kernel 4.20.17 (unfortunatelly EOL) as of the tests.
+  Kodi 18.3 RC1 has been working fine with kernel 4.20.17 (unfortunatelly EOL) as of the tests.
 
-To run **Kodi** type in shell:
+  To run **Kodi** type in shell:
 
     kodi
 
-** Limitations**
+  **Limitations**
 
-H265 does not work.
-H264 10 bit not works.
+  * H265 does not work.
+  * H264 10 bit not works.
 
 # Credits
 
