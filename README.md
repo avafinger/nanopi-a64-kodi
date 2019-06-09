@@ -195,6 +195,12 @@ This work's done by Maxime from Bootlin.
   * H265 does not work.
   * H264 10 bit not works.
 
+
+# Patch set
+
+  Patches has been applied manually in order to make it usefull. Contact the authors if you need help.
+
+
 # Credits
 
 * Bootlin (cedrus and mali)

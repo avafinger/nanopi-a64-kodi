@@ -1,0 +1,74 @@
+diff --git a/drivers/media/common/videobuf2/videobuf2-core.c b/drivers/media/common/videobuf2/videobuf2-core.c
+index 70e8c33..ca4577a 100644
+--- a/drivers/media/common/videobuf2/videobuf2-core.c
++++ b/drivers/media/common/videobuf2/videobuf2-core.c
+@@ -2175,6 +2175,13 @@ int vb2_mmap(struct vb2_queue *q, struct vm_area_struct *vma)
+ 		goto unlock;
+ 	}
+ 
++	/*
++	 * vm_pgoff is treated in V4L2 API as a 'cookie' to select a buffer,
++	 * not as a in-buffer offset. We always want to mmap a whole buffer
++	 * from its beginning.
++	 */
++	vma->vm_pgoff = 0;
++
+ 	ret = call_memop(vb, mmap, vb->planes[plane].mem_priv, vma);
+ 
+ unlock:
+diff --git a/drivers/media/common/videobuf2/videobuf2-dma-contig.c b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+index aff0ab7..46245c5 100644
+--- a/drivers/media/common/videobuf2/videobuf2-dma-contig.c
++++ b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+@@ -186,12 +186,6 @@ static int vb2_dc_mmap(void *buf_priv, struct vm_area_struct *vma)
+ 		return -EINVAL;
+ 	}
+ 
+-	/*
+-	 * dma_mmap_* uses vm_pgoff as in-buffer offset, but we want to
+-	 * map whole buffer
+-	 */
+-	vma->vm_pgoff = 0;
+-
+ 	ret = dma_mmap_attrs(buf->dev, vma, buf->cookie,
+ 		buf->dma_addr, buf->size, buf->attrs);
+ 
+diff --git a/drivers/media/common/videobuf2/videobuf2-dma-sg.c b/drivers/media/common/videobuf2/videobuf2-dma-sg.c
+index 015e737..a800200 100644
+--- a/drivers/media/common/videobuf2/videobuf2-dma-sg.c
++++ b/drivers/media/common/videobuf2/videobuf2-dma-sg.c
+@@ -328,28 +328,18 @@ static unsigned int vb2_dma_sg_num_users(void *buf_priv)
+ static int vb2_dma_sg_mmap(void *buf_priv, struct vm_area_struct *vma)
+ {
+ 	struct vb2_dma_sg_buf *buf = buf_priv;
+-	unsigned long uaddr = vma->vm_start;
+-	unsigned long usize = vma->vm_end - vma->vm_start;
+-	int i = 0;
++	int err;
+ 
+ 	if (!buf) {
+ 		printk(KERN_ERR "No memory to map\n");
+ 		return -EINVAL;
+ 	}
+ 
+-	do {
+-		int ret;
+-
+-		ret = vm_insert_page(vma, uaddr, buf->pages[i++]);
+-		if (ret) {
+-			printk(KERN_ERR "Remapping memory, error: %d\n", ret);
+-			return ret;
+-		}
+-
+-		uaddr += PAGE_SIZE;
+-		usize -= PAGE_SIZE;
+-	} while (usize > 0);
+-
++	err = vm_insert_range(vma, buf->pages, buf->num_pages);
++	if (err) {
++		printk(KERN_ERR "Remapping memory, error: %d\n", err);
++		return err;
++	}
+ 
+ 	/*
+ 	 * Use common vm_area operations to track buffer refcount.

@@ -1,0 +1,87 @@
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/staging/media/sunxi/cedrus/cedrus.c
+index d0429c0e6b6b..9349a082a29c 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+@@ -418,36 +418,41 @@ static int cedrus_remove(struct platform_device *pdev)
+ }
+ 
+ static const struct cedrus_variant sun4i_a10_cedrus_variant = {
+-	/* No particular capability. */
++	.mod_rate	= 320000000,
+ };
+ 
+ static const struct cedrus_variant sun5i_a13_cedrus_variant = {
+-	/* No particular capability. */
++	.mod_rate	= 320000000,
+ };
+ 
+ static const struct cedrus_variant sun7i_a20_cedrus_variant = {
+-	/* No particular capability. */
++	.mod_rate	= 320000000,
+ };
+ 
+ static const struct cedrus_variant sun8i_a33_cedrus_variant = {
+ 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
++	.mod_rate	= 320000000,
+ };
+ 
+ static const struct cedrus_variant sun8i_h3_cedrus_variant = {
+ 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
++	.mod_rate	= 402000000,
+ };
+ 
+ static const struct cedrus_variant sun50i_a64_cedrus_variant = {
+ 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
++	.mod_rate	= 402000000,
+ };
+ 
+ static const struct cedrus_variant sun50i_h5_cedrus_variant = {
+ 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
++	.mod_rate	= 402000000,
+ };
+ 
+ static const struct cedrus_variant sun50i_h6_cedrus_variant = {
+ 	.capabilities	= CEDRUS_CAPABILITY_UNTILED,
+ 	.quirks		= CEDRUS_QUIRK_NO_DMA_OFFSET,
++	.mod_rate	= 600000000,
+ };
+ 
+ static const struct of_device_id cedrus_dt_match[] = {
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+index c57c04b41d2e..25ee1f80f2c7 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+@@ -94,6 +94,7 @@ struct cedrus_dec_ops {
+ struct cedrus_variant {
+ 	unsigned int	capabilities;
+ 	unsigned int	quirks;
++	unsigned int	mod_rate;
+ };
+ 
+ struct cedrus_dev {
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+index fbfff7c1c771..60406b2d4595 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+@@ -236,7 +236,7 @@ int cedrus_hw_probe(struct cedrus_dev *dev)
+ 		goto err_sram;
+ 	}
+ 
+-	ret = clk_set_rate(dev->mod_clk, CEDRUS_CLOCK_RATE_DEFAULT);
++	ret = clk_set_rate(dev->mod_clk, variant->mod_rate);
+ 	if (ret) {
+ 		dev_err(dev->dev, "Failed to set clock rate\n");
+ 
+diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
+index b43c77d54b95..27d0882397aa 100644
+--- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
++++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.h
+@@ -16,8 +16,6 @@
+ #ifndef _CEDRUS_HW_H_
+ #define _CEDRUS_HW_H_
+ 
+-#define CEDRUS_CLOCK_RATE_DEFAULT	320000000
+-
+ int cedrus_engine_enable(struct cedrus_dev *dev, enum cedrus_codec codec);
+ void cedrus_engine_disable(struct cedrus_dev *dev);
+ 
