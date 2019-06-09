@@ -50,6 +50,11 @@ Here is a very simple table to show the state of this work.
 | issues                 |   spdif setup not works|                       |
 |                        |                        |                       |
 
+# Pre-Release
+
+A pre-release image for testing is here: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.0
+
+
 # IR
 
 ir has been tested with this procedure:
