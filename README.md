@@ -167,6 +167,8 @@ mpjpg-streamer
      o: commands..........: enabled
 
 
+![mpjpg-streamer](https://github.com/avafinger/nanopi-a64-kodi/raw/master/mpjpg-streamer.png)
+
 
 **Limitations**
 
