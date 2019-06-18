@@ -54,6 +54,9 @@ Here is a very simple table to show the state of this work.
 
 A pre-release image for testing is here: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.0
 
+# Release
+
+The IMG file with Kodi on A64 is here: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.1
 
 # IR
 
