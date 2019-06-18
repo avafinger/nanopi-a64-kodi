@@ -194,8 +194,9 @@ This work's done by Maxime from Bootlin.
 
   **Limitations**
 
-  * H265 does not work.
-  * H264 10 bit not works.
+  * H265 does not work. (fixed)
+  * 10 bit not works. (fixed)
+  * No 4K(yet)
 
 
 # Patch set
