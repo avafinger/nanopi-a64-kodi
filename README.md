@@ -211,6 +211,9 @@ This work's done by Maxime from Bootlin.
 
 Bootlog: https://gist.github.com/avafinger/a7b0164e42eac5722d9a6c03965ddd41
 
+Screen Shot Kodi 18.3-rc1
+![Kodi 1](https://github.com/avafinger/nanopi-a64-kodi/raw/master/nanopi-a64-kodi.jpg)
+
 
 # Credits
 
