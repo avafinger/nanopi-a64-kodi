@@ -211,6 +211,10 @@ This work's done by Maxime from Bootlin.
 
 Bootlog: https://gist.github.com/avafinger/a7b0164e42eac5722d9a6c03965ddd41
 
+Mainline Kernel 5.2.0-rc6 deb package:
+  https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.2
+
+
 Kodi 18.3-rc1
 ![Kodi 2](https://github.com/avafinger/nanopi-a64-kodi/raw/master/kodi.jpg)
 
