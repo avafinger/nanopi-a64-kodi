@@ -26,28 +26,28 @@ This is a WiP (Work in Progress) and intended for learning purpose, what does no
 
 Here is a very simple table to show the state of this work.
 
-|  SBC Dev Board tested  |    NanoPi A64          |   BananaPi M64        |
+|  SBC Dev Board tested  |    NanoPi A64          |   NanoPi A64          |
 |------------------------|------------------------|-----------------------|
-| kernel version         |       4.20.17          |                       |
+| kernel version         |       4.20.17          |    5.2.0-rc6          |
 | gcc version            |       7.3.0            |      7.3.0            |
 | display                |       hdmi             |      hdmi             |
 | graphical interface    |       CLI              |      CLI              |
 | KODI version           | 19.0-alpha1 / 18.3-rc1 |                       |
 | idle Temp ºC / freq    |   40 ºC / ~120 Mhz   * |  40 ºC / ~120 Mhz     |
 | full Temp ºC / freq    |   75 ºC / 1.15 GHz   * |  75 ºC / 1.15 GHz     |
-| RAM memory usage (avg) |      75   Mbytes       |      80   Mbytes      |
-| i2c                    |       yes              |      yes              |
-| spi                    |                        |                       |
-| Camera                 |   OV5640 (640x480 pix) |      no               |
-| Wifi                   |       8189es           |                       |
-| BT                     |       none             |                       |
-| ethernet               |       Gbps / 100Mbps   |                       |
-| sound                  |   hdmi-sound           |   hdmi-sound          |
-| ir                     |      yes               |                       |
-| linux-cedrus           |      yes               |                       |
-| mali-utgard            |      Mali-400          |                       |
+| RAM memory usage (avg) |      75   Mbytes       |      78   Mbytes      |
+| i2c                    |       yes              |      ?                |
+| spi                    |                        |      ?                |
+| Camera                 |   OV5640 (640x480 pix) |      ?                |
+| Wifi                   |       8189es           |   not yet             |
+| BT                     |       none             |    none               |
+| ethernet               |       Gbps / 100Mbps   |    Gbps               |
+| sound                  |   hdmi-sound           |   hdmi-sound ?        |
+| ir                     |      yes               |     ?                 |
+| linux-cedrus           |      yes               |     yes               |
+| mali-utgard            |      Mali-400          |     ?                 |
 |------------------------|------------------------|-----------------------|
-| issues                 |   spdif setup not works|                       |
+| issues                 |   spdif setup not works|    POC                |
 |                        |                        |                       |
 
 # Pre-Release
@@ -205,6 +205,11 @@ This work's done by Maxime from Bootlin.
 # Patch set
 
   Patches has been applied manually in order to make it usefull. Contact the authors if you need help.
+
+
+# Mainline Kernel 5.2.0-rc6
+
+Bootlog: https://gist.github.com/avafinger/a7b0164e42eac5722d9a6c03965ddd41
 
 
 # Credits
