@@ -221,6 +221,60 @@ Kodi 18.3-rc1
 Screen Shot Kodi 18.3-rc1
 ![Kodi 1](https://github.com/avafinger/nanopi-a64-kodi/raw/master/nanopi-a64-kodi.jpg)
 
+  * Enable Wlan0
+  
+        sudo apt-get install wpasupplicant
+
+    Edit **/etc/network/interfaces** and add/change
+    
+    
+        allow-hotplug wlan0
+        iface wlan0 inet dhcp
+            wpa-ssid "AP_SSID"
+            wpa-psk "PASSWORD"
+        # Disable power saving on compatible chipsets (prevents SSH/connection dropouts over WiFi)
+        #wireless-mode Managed
+        wireless-power off
+
+    Reboot:
+    
+        sudo reboot
+        
+
+    Check if wlan is up:
+    
+        ubuntu@nanopi-a64:~$ dmesg| grep wlan
+        [   23.897094] IPv6: ADDRCONF(NETDEV_CHANGE): wlan0: link becomes ready    
+
+    Wlan0 is lazy to accquire the IP from the DHCP, it takes a few seconds.
+    Check wlan0 IP:
+    
+        ip addr
+        1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+            link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+            inet 127.0.0.1/8 scope host lo
+               valid_lft forever preferred_lft forever
+            inet6 ::1/128 scope host 
+               valid_lft forever preferred_lft forever
+        2: eth0: <BROADCAST,MULTICAST> mtu 1500 qdisc mq state DOWN group default qlen 1000
+            link/ether 02:ba:4d:d2:14:5b brd ff:ff:ff:ff:ff:ff
+            inet 192.168.254.100/16 brd 192.168.255.255 scope global eth0
+               valid_lft forever preferred_lft forever
+        3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+            link/ether 34:c3:d2:13:f1:f0 brd ff:ff:ff:ff:ff:ff
+            inet 192.168.254.101/16 brd 192.168.255.255 scope global wlan0
+               valid_lft forever preferred_lft forever
+            inet 192.168.254.102/16 brd 192.168.255.255 scope global secondary wlan0
+               valid_lft forever preferred_lft forever
+            inet6 fe80::36c3:d2ff:fe13:f1f0/64 scope link 
+               valid_lft forever preferred_lft forever
+    
+
+     
+        ip route
+        default via 192.168.254.254 dev wlan0 
+        192.168.0.0/16 dev wlan0 proto kernel scope link src 192.168.254.101 
+
 
 # Credits
 
