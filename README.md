@@ -28,26 +28,26 @@ Here is a very simple table to show the state of this work.
 
 |  SBC Dev Board tested  |    NanoPi A64          |   NanoPi A64          |
 |------------------------|------------------------|-----------------------|
-| kernel version         |       4.20.17          |    5.2.0-rc6          |
-| gcc version            |       7.3.0            |      7.3.0            |
+| kernel version         |       4.20.17          |    5.3.0-rc3          |
+| gcc version            |       7.3.0            |      7.4.0            |
 | display                |       hdmi             |      hdmi             |
 | graphical interface    |       CLI              |      CLI              |
-| KODI version           | 19.0-alpha1 / 18.3-rc1 |                       |
+| KODI version           | 19.0-alpha1 / 18.3-rc1 | 19.0-alpha1 / 18.3-rc1|
 | idle Temp ºC / freq    |   40 ºC / ~120 Mhz   * |  40 ºC / ~120 Mhz     |
 | full Temp ºC / freq    |   75 ºC / 1.15 GHz   * |  75 ºC / 1.15 GHz     |
 | RAM memory usage (avg) |      75   Mbytes       |      78   Mbytes      |
-| i2c                    |       yes              |      ?                |
+| i2c                    |       yes              |      yes              |
 | spi                    |                        |      ?                |
 | Camera                 |   OV5640 (640x480 pix) |      ?                |
-| Wifi                   |       8189es           |   not yet             |
+| Wifi                   |       8189es           |    yes                |
 | BT                     |       none             |    none               |
-| ethernet               |       Gbps / 100Mbps   |    Gbps               |
-| sound                  |   hdmi-sound           |   hdmi-sound ?        |
-| ir                     |      yes               |     ?                 |
-| linux-cedrus           |      yes               |     yes               |
-| mali-utgard            |      Mali-400          |     ?                 |
+| ethernet               |       Gbps / 100Mbps   |    Gbps / 100Mbps     |
+| sound                  |   hdmi-sound           |   hdmi-sound          |
+| ir                     |      yes               |     yes               |
+| cedrus                 |      yes               |     yes               |
+| mali-utgard            |      Mali-400          |     yes               |
 |------------------------|------------------------|-----------------------|
-| issues                 |   spdif setup not works|    POC                |
+| issues                 |   spdif setup not works|  Need more tests      |
 |                        |                        |                       |
 
 # Pre-Release
