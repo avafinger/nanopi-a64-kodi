@@ -28,12 +28,12 @@ Here is a very simple table to show the state of this work.
 
 |  SBC Dev Board tested  |    NanoPi A64          |   NanoPi A64          |
 |------------------------|------------------------|-----------------------|
-| kernel version         |       4.20.17          |    5.3.0-rc3          |
+| kernel version         |       4.20.17          |    5.3.0-rc4          |
 | gcc version            |       7.3.0            |      7.4.0            |
 | display                |       hdmi             |      hdmi             |
 | graphical interface    |       CLI              |      CLI              |
 | KODI version           | 19.0-alpha1 / 18.3-rc1 | 19.0-alpha1 / 18.3-rc1|
-| idle Temp ºC / freq    |   40 ºC / ~120 Mhz   * |  40 ºC / ~120 Mhz     |
+| idle Temp ºC / freq    |   40 ºC / ~120 Mhz   * |  45 ºC / ~120 Mhz     |
 | full Temp ºC / freq    |   75 ºC / 1.15 GHz   * |  75 ºC / 1.15 GHz     |
 | RAM memory usage (avg) |      75   Mbytes       |      78   Mbytes      |
 | i2c                    |       yes              |      yes              |
@@ -47,7 +47,7 @@ Here is a very simple table to show the state of this work.
 | cedrus                 |      yes               |     yes               |
 | mali-utgard            |      Mali-400          |     yes               |
 |------------------------|------------------------|-----------------------|
-| issues                 |   spdif setup not works|  Need more tests      |
+| issues                 |   spdif setup not works|  spdif / jack ?       |
 |                        |                        |                       |
 
 # Pre-Release
@@ -275,6 +275,12 @@ Screen Shot Kodi 18.3-rc1
         default via 192.168.254.254 dev wlan0 
         192.168.0.0/16 dev wlan0 proto kernel scope link src 192.168.254.101 
 
+
+# Release 1.3
+
+Mainline Linux Kernel 5.3.0-rc4
+
+The DEB file will be in: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.3
 
 # Credits
 
