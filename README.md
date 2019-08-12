@@ -282,6 +282,13 @@ Mainline Linux Kernel 5.3.0-rc4
 
 The DEB file will be in: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.3
 
+Kodi 18.3-rc1 - Kernel 5.3.0-rc4
+![Kodi v1](https://github.com/avafinger/nanopi-a64-kodi/raw/master/kodi-v1.jpg)
+
+Kodi 18.3-rc1 - Kernel 5.3.0-rc4
+![Kodi v2](https://github.com/avafinger/nanopi-a64-kodi/raw/master/kodi-b2.jpg)
+
+
 # Credits
 
 * Bootlin (cedrus and mali)
