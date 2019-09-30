@@ -1,6 +1,6 @@
 # Nanopi-a64 running kodi
 
-This is a prebuilt Ubuntu 18.04 minimal image with linux 4.20.17 / 5.3.y-rc to run Kodi.
+This is a prebuilt Ubuntu 18.04 minimal image with linux 4.20.17 / 5.3.y to run Kodi.
 
 Kernel features on NanoPi A64:
 
@@ -57,6 +57,12 @@ A pre-release image for testing is here: https://github.com/avafinger/nanopi-a64
 # Release
 
 The IMG file with Kodi on A64 is here: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.1
+
+# Kernel 5.3.1
+
+Bootlog: https://gist.github.com/avafinger/c2338177117ff95fb3069c8f0c96dc62
+
+Linux-image-5.3.1: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.4
 
 # IR
 
