@@ -68,7 +68,7 @@ Linux-image-5.3.1: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.
 
 Bootlog: https://gist.github.com/avafinger/1286756a022fb9a20593c817e3d4bb02
 
-Linux-image-5.3.8: 
+Linux-image-5.3.8: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.5
 
 Kodi limitations: 
 
