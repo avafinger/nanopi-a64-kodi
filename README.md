@@ -28,8 +28,8 @@ Here is a very simple table to show the state of this work.
 
 |  SBC Dev Board tested  |    NanoPi A64          |   NanoPi A64          |
 |------------------------|------------------------|-----------------------|
-| kernel version         |       4.20.17          |    5.3.0-rc4          |
-| gcc version            |       7.3.0            |      7.4.0            |
+| kernel version         |       4.20.17          |    5.3.8              |
+| gcc version            |       7.3.0            |      7.4.1            |
 | display                |       hdmi             |      hdmi             |
 | graphical interface    |       CLI              |      CLI              |
 | KODI version           | 19.0-alpha1 / 18.3-rc1 | 19.0-alpha1 / 18.3-rc1|
@@ -63,6 +63,17 @@ The IMG file with Kodi on A64 is here: https://github.com/avafinger/nanopi-a64-k
 Bootlog: https://gist.github.com/avafinger/c2338177117ff95fb3069c8f0c96dc62
 
 Linux-image-5.3.1: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.4
+
+# Kernel 5.3.8
+
+Bootlog: https://gist.github.com/avafinger/1286756a022fb9a20593c817e3d4bb02
+
+Linux-image-5.3.8: 
+
+Kodi limitations: 
+
+* HEVC 10bit does not work properly
+* 4K not yet
 
 # IR
 
