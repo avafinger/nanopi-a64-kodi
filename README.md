@@ -28,7 +28,7 @@ Here is a very simple table to show the state of this work.
 
 |  SBC Dev Board tested  |    NanoPi A64          |   NanoPi A64          |
 |------------------------|------------------------|-----------------------|
-| kernel version         |       4.20.17          |    5.3.8              |
+| kernel version         |       4.20.17          |    5.3.10             |
 | gcc version            |       7.3.0            |      7.4.1            |
 | display                |       hdmi             |      hdmi             |
 | graphical interface    |       CLI              |      CLI              |
@@ -74,6 +74,18 @@ Kodi limitations:
 
 * HEVC 10bit does not work properly
 * 4K not yet
+
+# Kernel 5.3.10
+
+Bootlog: https://gist.github.com/avafinger/a4e4e948feed26d84792280a0325b592
+
+Linux-image-5.3.10: https://github.com/avafinger/nanopi-a64-kodi/releases/tag/v1.6
+
+Kodi limitations: 
+
+* HEVC 10bit
+* 4K
+
 
 # IR
 
